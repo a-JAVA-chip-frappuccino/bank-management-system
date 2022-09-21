@@ -9,7 +9,7 @@ public class BankController {
     
     @RequestMapping("/")
     public String sendToScreen(Model model) {
-        return "bank/account";
+        return "bank/html/account";
     }
 
 }
