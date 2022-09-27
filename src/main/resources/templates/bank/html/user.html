@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+
+<html lang = "en" xmlns:th = "http://thymeleaf.org">
+
+    <head>
+        <meta charset = "utf-8">
+
+        <title>Account Information</title>
+
+        <link rel = "stylesheet" href = "../css/spreadsheet.css">
+    </head>
+
+    <body>
+        <h1>Bank Account Information</h1>
+
+        <table>
+
+            <tr>
+                <th>Account Type</th>
+                <th>Account Balance</th>
+                <th>Interest Rate</th>
+                <th>Bank Statement</th>
+            </tr>
+
+            <tr th:each = "account : ${accounts}">
+                <td th:text = "${account.type}"></td>
+                <td th:text = "${account.balance}"></td>
+                <td th:text = "${account.interestRate}"></td>
+                <td th:text = "${account.statement"></td>
+            </tr>
+
+        </table>
+
+    </body>
+
+</html>

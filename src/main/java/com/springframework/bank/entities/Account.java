@@ -79,7 +79,7 @@ public class Account {
         return "Account Type: " + type + "\n"
                 + "Account Balance: " + balance + "\n"
                 + "Interest Rate: " + interestRate + "\n"
-                + "Statement: " + statement;
+                + "Bank Statement: " + statement;
     }
 
     @Override
