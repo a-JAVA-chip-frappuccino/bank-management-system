@@ -1,29 +1,33 @@
 package com.springframework.bank.entities;
 
 import javax.persistence.*;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 @Table(name = "accounts")
 public class Account {
 
-    //TODO: implement joining element here for two tables?
     @Id
     private Long id;
     
     private String type;
-    private float balance;
-    private float interestRate;
+    private double balance;
+    private double interestRate;
     private String statement;
-    private String transactHistory;
+
+    @ManyToMany(mappedBy = "users")
+    private Set<Account> accounts = new HashSet<>();
 
     // constructor
 
-    public Account(String type, float balance, float interestRate, String statement, String transactHistory) {
+    public Account() {}
+
+    public Account(String type, double balance, double interestRate, String statement) {
         this.type = type;
         this.balance = balance;
         this.interestRate = interestRate;
         this.statement = statement;
-        this.transactHistory = transactHistory;
     }
 
     // getters and setters
@@ -36,7 +40,7 @@ public class Account {
         this.type = type;
     }
 
-    public float getBalance() {
+    public double getBalance() {
         return balance;
     }
 
@@ -44,7 +48,7 @@ public class Account {
         this.balance = balance;
     }
 
-    public float getInterestRate() {
+    public double getInterestRate() {
         return interestRate;
     }
 
@@ -60,12 +64,41 @@ public class Account {
         this.statement = statement;
     }
 
-    public String getTransactHistory() {
-        return transactHistory;
+    public Set<Account> getAccounts() {
+        return accounts;
     }
 
-    public void setTransactHistory(String transactHistory) {
-        this.transactHistory = transactHistory;
+    public void setAccounts(Set<Account> accounts) {
+        this.accounts = accounts;
+    }
+
+    // overriding methods
+
+    @Override
+    public String toString() {
+        return "Account Type: " + type + "\n"
+                + "Account Balance: " + balance + "\n"
+                + "Interest Rate: " + interestRate + "\n"
+                + "Statement: " + statement;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o)
+            return true;
+        if (o == null || getClass() != o.getClass())
+            return false;
+
+        Account account = (Account) o;
+
+        //TODO: translate to non-ternary syntax
+        return id != null ? id.equals(account.id) : account.id == null;
+    }
+
+    @Override
+    public int hashCode() {
+        //TODO: translate to non-ternary syntax
+        return id != null ? id.hashCode() : 0;
     }
 }
 
