@@ -14,7 +14,12 @@
 
         <form>
             <label for = "type">Enter Account Type: </label>
-            <input type = "text" placeholder = "type" name = "type" required/>
+            <select name = "type">
+                <option value = "checking">Checking Account</option>
+                <option value = "saving">Savings Account</option>
+                <option value = "mm">Money Market Account</option>
+                <option value = "cd">Certificate of Deposit Account</option>
+            </select>
 
             <br/><br/>
 
@@ -24,7 +29,7 @@
             <br/><br/>
 
             <label for = "interest">Enter Interest Rate: </label>
-            <input type = "text" placeholder = "interest rate" name = "interest" required/>
+            <input type = "text" placeholder = "interest rate" name = "interest" maxlength = "6" required/>
 
             <br/><br/>
 
