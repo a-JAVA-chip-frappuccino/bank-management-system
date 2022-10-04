@@ -12,7 +12,7 @@ public class Account {
     private Long id;
     
     //TODO: INTEGRATE USERNAME INTO REMAINDER OF CODE
-    private String username;
+    //private String username;
     private String type;
     private double balance;
     private double interestRate;
