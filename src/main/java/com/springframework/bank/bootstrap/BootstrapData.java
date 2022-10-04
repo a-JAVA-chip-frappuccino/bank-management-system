@@ -26,12 +26,12 @@ public class BootstrapData implements CommandLineRunner {
 
         Account bellaBucks = new Account("Savings", 3000.00, 0.06, "Deposit: HOTEL");
         User bellaSwan = new User("XXvampyXX", "EDwarD<3");
-        bellaBucks.getAccounts().add(bellaSwan);
-        bellaSwan.getUsers().add(bellaBucks); 
+        //bellaBucks.getAccounts().add(bellaSwan);
+        //bellaSwan.getUsers().add(bellaBucks); 
         //publisher.getBooks().add(ddd);
 
-        AccountRepository.save(bellaBucks);
-        UserRepository.save(bellaSwan);
+        //AccountRepository.save(bellaBucks);
+        //UserRepository.save(bellaSwan);
 
         System.out.println("Finished Running in Bootstrap!");
     }
