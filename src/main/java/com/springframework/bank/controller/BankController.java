@@ -7,9 +7,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class BankController {
     
-    @RequestMapping("/")
+    @RequestMapping("/sendtoscreen")
     public String sendToScreen(Model model) {
-        return "bank/html/account";
+        return "Hello, World!";
     }
 
 }
