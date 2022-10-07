@@ -8,17 +8,18 @@ import java.util.Set;
 @Table(name = "users")
 public class User {
 
-    @Id
+    /*@Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+    private Long user_id;*/
     
+    @Id
     private String username;
     private String password;
 
-    @ManyToMany
-    @JoinTable(name = "user_account", joinColumns = @JoinColumn(name = "user_id"),
+    /*@ManyToMany
+    @JoinTable(name = "user_account", joinColumns = @JoinColumn(name = "username"),
                 inverseJoinColumns = @JoinColumn(name = "account_id"))
-    private Set<User> users = new HashSet<>();
+    private Set<User> users = new HashSet<>();*/
 
     // constructor
 
@@ -47,13 +48,13 @@ public class User {
         this.password = password;
     }
 
-    public Set<User> getUsers() {
+    /*public Set<User> getUsers() {
         return users;
     }
 
     public void setUsers(Set<User> users) {
         this.users = users;
-    }
+    }*/
 
     // overriding methods
 
@@ -73,13 +74,13 @@ public class User {
         User user = (User) o;
 
         //TODO: translate to non-ternary syntax
-        return id != null ? id.equals(user.id) : user.id == null;
+        return username != null ? username.equals(user.username) : user.username == null;
     }
 
     @Override
     public int hashCode() {
         //TODO: translate to non-ternary syntax
-        return id != null ? id.hashCode() : 0;
+        return username != null ? username.hashCode() : 0;
     }
 
 }

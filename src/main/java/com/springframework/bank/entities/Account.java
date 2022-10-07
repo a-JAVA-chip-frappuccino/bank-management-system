@@ -9,17 +9,17 @@ import java.util.Set;
 public class Account {
 
     @Id
-    private Long id;
+    private Long account_id;
     
-    //TODO: INTEGRATE USERNAME INTO REMAINDER OF CODE
-    //private String username;
+    /*TODO: INTEGRATE USERNAME INTO REMAINDER OF CODE
+    private String username;*/
     private String type;
     private double balance;
     private double interestRate;
     private String statement;
 
-    @ManyToMany(mappedBy = "users")
-    private Set<Account> accounts = new HashSet<>();
+    /*@ManyToMany(mappedBy = "users")
+    private Set<Account> accounts = new HashSet<>();*/
 
     // constructor
 
@@ -66,13 +66,13 @@ public class Account {
         this.statement = statement;
     }
 
-    public Set<Account> getAccounts() {
+    /*public Set<Account> getAccounts() {
         return accounts;
     }
 
     public void setAccounts(Set<Account> accounts) {
         this.accounts = accounts;
-    }
+    }*/
 
     // overriding methods
 
@@ -94,13 +94,13 @@ public class Account {
         Account account = (Account) o;
 
         //TODO: translate to non-ternary syntax
-        return id != null ? id.equals(account.id) : account.id == null;
+        return account_id != null ? account_id.equals(account.account_id) : account.account_id == null;
     }
 
     @Override
     public int hashCode() {
         //TODO: translate to non-ternary syntax
-        return id != null ? id.hashCode() : 0;
+        return account_id != null ? account_id.hashCode() : 0;
     }
 }
 
