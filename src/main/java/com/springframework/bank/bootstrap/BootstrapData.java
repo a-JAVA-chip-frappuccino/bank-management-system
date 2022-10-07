@@ -1,12 +1,13 @@
 package com.springframework.bank.bootstrap;
 
-import com.springframework.bank.entities.Account;
-import com.springframework.bank.entities.User;
-import com.springframework.bank.repositories.AccountRepository;
-import com.springframework.bank.repositories.UserRepository;
-
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
+
+import com.springframework.bank.entities.Account;
+import com.springframework.bank.entities.User;
+
+import com.springframework.bank.repositories.AccountRepository;
+import com.springframework.bank.repositories.UserRepository;
 
 @Component
 public class BootstrapData implements CommandLineRunner {
@@ -27,8 +28,7 @@ public class BootstrapData implements CommandLineRunner {
         Account bellaBucks = new Account("Savings", 3000.00, 0.06, "Deposit: HOTEL");
         User bellaSwan = new User("XXvampyXX", "EDwarD<3");
         //bellaBucks.getAccounts().add(bellaSwan);
-        //bellaSwan.getUsers().add(bellaBucks); 
-        //publisher.getBooks().add(ddd);
+        //bellaSwan.getUsers().add(bellaBucks);
 
         //AccountRepository.save(bellaBucks);
         //UserRepository.save(bellaSwan);
