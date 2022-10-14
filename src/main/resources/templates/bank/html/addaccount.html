@@ -12,34 +12,12 @@
     <body>
         <h1>Add Account Information</h1>
 
-        <form>
-            <label for = "type">Enter Account Type: </label>
-            <select name = "type">
-                <option value = "checking">Checking Account</option>
-                <option value = "saving">Savings Account</option>
-                <option value = "mm">Money Market Account</option>
-                <option value = "cd">Certificate of Deposit Account</option>
-            </select>
+        <div id = "addaccount_form_container"></div>
+        
+        <script src = "https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+  		<script src = "https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
 
-            <br/><br/>
-
-            <label for = "balance">Enter Current Balance: </label>
-            <input type = "text" placeholder = "balance" name = "balance" required/>
-
-            <br/><br/>
-
-            <label for = "interest">Enter Interest Rate: </label>
-            <input type = "text" placeholder = "interest rate" name = "interest" maxlength = "6" required/>
-
-            <br/><br/>
-
-            <label for = "statement">Enter Bank Statement(s): </label>
-            <input type = "text" placeholder = "statement" name = "statement"/>
-
-            <br/><br/>
-
-            <button type = "submit">Submit</button>
-        </form>
+        <script src = "../javascript/addaccount.js"></script>
         
     </body>
 </html>
